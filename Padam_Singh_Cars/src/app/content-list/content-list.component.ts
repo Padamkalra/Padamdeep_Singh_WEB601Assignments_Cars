@@ -45,7 +45,7 @@ export class ContentListComponent {
         description: "Black",
         creator: "Creator 4",
         imgURL: "https://th.bing.com/th?id=OIP.skl5oqID86yeY9Vn_9ihkgHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-        type: "Touring Sport"
+        type: "Super Sport"
       },
       {
         id: 4,
@@ -53,7 +53,7 @@ export class ContentListComponent {
         description: "Red",
         creator: "Creator 5",
         imgURL: "https://th.bing.com/th?id=OIP.SfHDOrSjwNwzu0BFGbFAEAHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-        type: "Touring Sport"
+        type: "Super Sport"
       },
       {
         id: 5,
@@ -61,7 +61,7 @@ export class ContentListComponent {
         description: "Yellow",
         creator: "Creator 5",
         imgURL: "https://th.bing.com/th?id=OIP.zRo2zCg61WoPAV5bfs05igHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-        type: "Touring Sport"
+        type: "Super Sport"
       },
       {
         id: 6,
@@ -77,7 +77,7 @@ export class ContentListComponent {
         description: "White",
         creator: "Creator 6",
         imgURL: "https://th.bing.com/th?id=OIP.CHQy-VPAh4E-HT3s9YipOgHaE6&w=306&h=203&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
-        type: 
+        type: ""
       },
       {
         id: 8,
