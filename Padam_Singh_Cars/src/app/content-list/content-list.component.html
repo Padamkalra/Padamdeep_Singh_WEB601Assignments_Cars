@@ -1,14 +1,64 @@
-<section class="cards">
-    <div *ngFor="let content of contents | slice: 0:5" class="card">
-        <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
-        <h2>{{content.title}}</h2>
-        <p>{{content.description}}</p>
-        <p><strong>Creator:</strong> {{content.creator}}</p>
-        <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
-        <p *ngIf="content.tags"><strong>Tags:</strong> 
-            <ng-container *ngFor="let tag of content.tags">
-                {{tag}},
-            </ng-container>
-        </p>
-    </div>
-</section>
+<main>
+    <section class="searchForTitle">
+        <div>
+            <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+            <button (click)="searchByTitle()">Search</button>
+        </div>
+
+        <div *ngIf="titleFound !== null">
+            <p [style.color]="titleFound ? 'green' : 'crimson'">
+                {{titleFound ? 'Bike Found' : 'Bike not found'}}
+            </p>
+        </div>
+    </section>
+
+
+    <h1>Bikes with no type</h1>
+    <section class="cards">
+        <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType">
+
+            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+            <h2>{{content.title}}</h2>
+            <p>{{content.description}}</p>
+            <p><strong>Creator:</strong> {{content.creator}}</p>
+            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
+            <p *ngIf="content.tags"><strong>Tags:</strong> 
+                <ng-container *ngFor="let tag of content.tags">
+                    {{tag}},
+                </ng-container>
+            </p>
+        </div>
+    </section>
+    
+    <h1>Super Sport Bikes</h1>
+    <section class="cards">
+        <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport">
+            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+            <h2>{{content.title}}</h2>
+            <p>{{content.description}}</p>
+            <p><strong>Creator:</strong> {{content.creator}}</p>
+            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
+            <p *ngIf="content.tags"><strong>Tags:</strong> 
+                <ng-container *ngFor="let tag of content.tags">
+                    {{tag}},
+                </ng-container>
+            </p>
+        </div>
+    </section>
+    
+    <h1>Naked Super Sport Bikes</h1>
+    <section class="cards">
+        <div *ngFor="let content of contents | contentType:'Naked Super Sport'" [id]="content.id" class="card nakedSuperSport">
+            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+            <h2>{{content.title}}</h2>
+            <p>{{content.description}}</p>
+            <p><strong>Creator:</strong> {{content.creator}}</p>
+            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
+            <p *ngIf="content.tags"><strong>Tags:</strong> 
+                <ng-container *ngFor="let tag of content.tags">
+                    {{tag}},
+                </ng-container>
+            </p>
+        </div>
+    </section>
+</main>
