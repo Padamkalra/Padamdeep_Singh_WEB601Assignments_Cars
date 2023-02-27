@@ -7,13 +7,13 @@
 
         <div *ngIf="titleFound !== null">
             <p [style.color]="titleFound ? 'green' : 'crimson'">
-                {{titleFound ? 'Bike Found' : 'Bike not found'}}
+                {{titleFound ? 'Car Found' : 'Car not found'}}
             </p>
         </div>
     </section>
 
 
-    <h1>Bikes with no type</h1>
+    <h1> Cars with no type</h1>
     <section class="cards">
         <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType">
 
@@ -30,7 +30,7 @@
         </div>
     </section>
     
-    <h1>Super Sport Bikes</h1>
+    <h1>Super Sport Cars</h1>
     <section class="cards">
         <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport">
             <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
@@ -46,7 +46,7 @@
         </div>
     </section>
     
-    <h1>Naked Super Sport Bikes</h1>
+    <h1>Naked Super Sport Cars</h1>
     <section class="cards">
         <div *ngFor="let content of contents | contentType:'Naked Super Sport'" [id]="content.id" class="card nakedSuperSport">
             <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
