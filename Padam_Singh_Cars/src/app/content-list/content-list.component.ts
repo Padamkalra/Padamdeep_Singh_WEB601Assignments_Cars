@@ -75,7 +75,7 @@ export class ContentListComponent {
         id: 7,
         title: "Desire",
         description: "White",
-        creator: "Creator 6",
+        creator: "Creator 7",
         imgURL: "https://th.bing.com/th?id=OIP.CHQy-VPAh4E-HT3s9YipOgHaE6&w=306&h=203&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
         type: ""
       },
@@ -83,7 +83,7 @@ export class ContentListComponent {
         id: 8,
         title: "Desire",
         description: "White",
-        creator: "Creator 6",
+        creator: "Creator 8",
         imgURL: "https://th.bing.com/th?id=OIP.CHQy-VPAh4E-HT3s9YipOgHaE6&w=306&h=203&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
         type: ""
       },
