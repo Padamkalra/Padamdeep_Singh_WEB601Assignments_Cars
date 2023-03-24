@@ -18,7 +18,14 @@
     <h1>Super Sport Cars</h1>
     <section class="cards">
         <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport">
-            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+            <div *ngIf="content.imgURL; else defaultImage">
+               <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+             
+           </div>
+           <ng-template #defaultImage>
+            <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
+             
+           </ng-template> 
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
@@ -34,7 +41,14 @@
     <h1> Highly Super Sport Cars</h1>
     <section class="cards">
         <div *ngFor="let content of contents | contentType:'Naked Super Sport'" [id]="content.id" class="card nakedSuperSport">
-            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+            <div *ngIf="content.imgURL; else defaultImage">
+                <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+              
+            </div>
+            <ng-template #defaultImage>
+             <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
+              
+            </ng-template>
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
@@ -51,7 +65,14 @@
     <section class="cards">
         <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType">
 
-            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+            <div *ngIf="content.imgURL; else defaultImage">
+                <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
+              
+            </div>
+            <ng-template #defaultImage>
+             <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
+              
+            </ng-template>
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
