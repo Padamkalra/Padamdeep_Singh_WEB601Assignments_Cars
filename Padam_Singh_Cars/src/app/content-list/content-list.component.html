@@ -17,7 +17,8 @@
     
     <h1>Super Sport Cars</h1>
     <section class="cards">
-        <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport">
+        <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport" appHoverAffect="'border">
+
             <div *ngIf="content.imgURL; else defaultImage">
                <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
              
@@ -29,58 +30,62 @@
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
-            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
+            <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
             <p *ngIf="content.tags"><strong>Tags:</strong> 
-                <ng-container *ngFor="let tag of content.tags">
+                <span *ngFor="let tag of content.tags" appHoverAffect="bold">
                     {{tag}},
-                </ng-container>
+                </span>
             </p>
         </div>
     </section>
     
     <h1> Highly Super Sport Cars</h1>
     <section class="cards">
-        <div *ngFor="let content of contents | contentType:'Naked Super Sport'" [id]="content.id" class="card nakedSuperSport">
+        <div *ngFor="let content of contents | contentType:'Naked Super Sport'" [id]="content.id" class="card nakedSuperSport" appHoverAffect="border">
             <div *ngIf="content.imgURL; else defaultImage">
                 <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
               
             </div>
-            <ng-template #defaultImage>
+            <ng-template #defaultImage
+            
+            >
              <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
               
             </ng-template>
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
-            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
+            <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
             <p *ngIf="content.tags"><strong>Tags:</strong> 
-                <ng-container *ngFor="let tag of content.tags">
+                <span *ngFor="let tag of content.tags" appHoverAffect="bold">
                     {{tag}},
-                </ng-container>
+                </span>
             </p>
         </div>
     </section>
 
     <h1> Cars with no classification</h1>
     <section class="cards">
-        <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType">
+        <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType" appHoverAffect="border">
 
             <div *ngIf="content.imgURL; else defaultImage">
                 <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
               
             </div>
-            <ng-template #defaultImage>
+            <ng-template #defaultImage
+            
+            >
              <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
               
             </ng-template>
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
-            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
+            <p *ngIf="content.type" appHoverAffect="underline"><strong>Type:</strong> {{content.type}}</p>
             <p *ngIf="content.tags"><strong>Tags:</strong> 
-                <ng-container *ngFor="let tag of content.tags">
+                <span *ngFor="let tag of content.tags" appHoverAffect="bold">
                     {{tag}},
-                </ng-container>
+                </span>
             </p>
         </div>
     </section>
