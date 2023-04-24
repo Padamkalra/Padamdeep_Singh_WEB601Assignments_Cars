@@ -1,4 +1,6 @@
 <main>
+    <app-create-content (addCarEvent)="addNewCar($event)"></app-create-content>
+
     <section class="searchForTitle">
         <div>
             <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
@@ -11,10 +13,7 @@
             </p>
         </div>
     </section>
-
-
-   
-    
+ 
     <h1>Super Sport Cars</h1>
     <section class="cards">
         <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport" appHoverAffect="'border">
@@ -25,8 +24,8 @@
            </div>
            <ng-template #defaultImage>
             <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
-             
-           </ng-template> 
+             </ng-template>
+
             <h2>{{content.title}}</h2>
             <p>{{content.description}}</p>
             <p><strong>Creator:</strong> {{content.creator}}</p>
@@ -46,9 +45,7 @@
                 <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
               
             </div>
-            <ng-template #defaultImage
-            
-            >
+            <ng-template #defaultImage>
              <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
               
             </ng-template>
@@ -72,9 +69,7 @@
                 <img  [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
               
             </div>
-            <ng-template #defaultImage
-            
-            >
+            <ng-template #defaultImage>
              <img  [src]="defaultcar" alt={{content.title}} (click)="handleClick(content)">
               
             </ng-template>
