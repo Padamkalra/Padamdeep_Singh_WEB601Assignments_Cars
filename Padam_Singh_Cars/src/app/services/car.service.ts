@@ -4,18 +4,27 @@ import { Content } from '../helper-files/content-interface';
 import { contents } from '../helper-files/ContentDb';
 import { MessageService } from './message.service';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  constructor(private MessageService: MessageService) { }
-
+  constructor(private http: HttpClient , private MessageService: MessageService) { }
+  private httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json"})
+  }
   getcars(): Observable<Content[]>{
     const cars = contents;
     this.MessageService.add("Content array loaded!");
     return of(cars);
   }
+  addCar(NewCar: Content): Observable<Content>{
+    this.MessageService.add(`New Car added`);
+    return this.http.post<Content>("/api/cars", NewCar, this.httpOptions);
+  }
+
 
   getcarById(id: number): Observable<any>{
     const cars = contents.find(content => content.id === id);

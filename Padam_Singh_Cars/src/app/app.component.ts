@@ -8,7 +8,7 @@ import { CarService } from './services/car.service';
 })
 export class AppComponent {
   title = 'Padam_Singh_Cars';
-  carId:number = 8;
+  carId:number = 2;
   oneCar: any = {};
 
   constructor(private CarService: CarService){}
