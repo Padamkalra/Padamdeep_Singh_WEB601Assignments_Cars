@@ -13,54 +13,25 @@
     </section>
 
 
-   
+    <h1>Cars with no type</h1>
+    <section class="cards">
+        <div *ngFor="let content of contents | contentType" appHoverAffect="border">
+            <app-content-card [car]="content" [class]="'noContentType'"></app-content-card>
+        </div>
+    </section>
+    
     
     <h1>Super Sport Cars</h1>
     <section class="cards">
-        <div *ngFor="let content of contents | contentType:'Super Sport'" [id]="content.id" class="card superSport">
-            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
-            <h2>{{content.title}}</h2>
-            <p>{{content.description}}</p>
-            <p><strong>Creator:</strong> {{content.creator}}</p>
-            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
-            <p *ngIf="content.tags"><strong>Tags:</strong> 
-                <ng-container *ngFor="let tag of content.tags">
-                    {{tag}},
-                </ng-container>
-            </p>
-        </div>
-    </section>
-    
-    <h1> Highly Super Sport Cars</h1>
-    <section class="cards">
-        <div *ngFor="let content of contents | contentType:'Naked Super Sport'" [id]="content.id" class="card nakedSuperSport">
-            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
-            <h2>{{content.title}}</h2>
-            <p>{{content.description}}</p>
-            <p><strong>Creator:</strong> {{content.creator}}</p>
-            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
-            <p *ngIf="content.tags"><strong>Tags:</strong> 
-                <ng-container *ngFor="let tag of content.tags">
-                    {{tag}},
-                </ng-container>
-            </p>
+        <div *ngFor="let content of contents | contentType:'Super Sport'" appHoverAffect="border">
+            <app-content-card [car]="content" [class]="'superSport'"></app-content-card>
         </div>
     </section>
 
-    <h1> Cars with no classification</h1>
+    <h1>Naked Super Sport Cars</h1>
     <section class="cards">
-        <div *ngFor="let content of contents | contentType" [id]="content.id" class="card noContentType">
-
-            <img *ngIf="content.imgURL" [src]="content.imgURL" alt={{content.title}} (click)="handleClick(content)">
-            <h2>{{content.title}}</h2>
-            <p>{{content.description}}</p>
-            <p><strong>Creator:</strong> {{content.creator}}</p>
-            <p *ngIf="content.type"><strong>Type:</strong> {{content.type}}</p>
-            <p *ngIf="content.tags"><strong>Tags:</strong> 
-                <ng-container *ngFor="let tag of content.tags">
-                    {{tag}},
-                </ng-container>
-            </p>
+        <div *ngFor="let content of contents | contentType:'Naked Super Sport'" appHoverAffect="border">
+            <app-content-card [car]="content" [class]="'nakedSuperSport'"></app-content-card>
         </div>
     </section>
 </main>

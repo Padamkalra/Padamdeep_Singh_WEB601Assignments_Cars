@@ -1,0 +1,23 @@
+<div [id]="car.id" [ngClass]="['card', class]" appHoverAffect="border">
+
+    <div class="card-img">
+        <div *ngIf="car.imgURL; else defaultImage">
+            <img  [src]="car.imgURL" alt={{car.title}} (click)="handleClick(car)">
+        </div>
+        <ng-template #defaultImage>
+            <img [src]="defaultCar" alt={{car.title}} (click)="handleClick(car)">
+        </ng-template>
+    </div>
+
+    <div class="card-body">
+        <h2>{{car.title}}</h2>
+        <p>{{car.description}}</p>
+        <p><strong>Creator:</strong> {{car.creator}}</p>
+        <p *ngIf="car.type" appHoverAffect="underline"><strong>Type:</strong> {{car.type}}</p>
+        <p *ngIf="car.tags"><strong>Tags:</strong> 
+            <span *ngFor="let tag of car.tags" appHoverAffect="bold">
+                {{tag}},
+            </span>
+        </p>
+    </div>
+</div>

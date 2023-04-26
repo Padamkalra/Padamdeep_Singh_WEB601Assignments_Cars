@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarService } from './services/car.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Padam_Singh_Cars';
+  carId:number = 8;
+  oneCar: any = {};
+
+  constructor(private CarService: CarService){}
+
+  ngOnInit(){
+    this.findCarById();
+  }
+
+  findCarById(){
+    this.CarService.getcarById(this.carId).subscribe(result => {
+      if (typeof result === "object"){
+        this.oneCar = result;
+      }
+    });
+  }
 }

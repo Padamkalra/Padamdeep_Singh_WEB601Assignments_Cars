@@ -1,0 +1,51 @@
+.card{
+    width: 400px;
+    padding: 15px;
+    min-height: 540px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.noContentType{
+        color: #74F0ED;
+        background-color: black;
+    }
+    &.superSport{
+        color: #5ebec4;
+        background-color: #fdf5df;
+    }
+    &.nakedSuperSport{
+        color: #000;
+        background-color: #a0aecd;
+    }
+
+    &.oneBike{
+        box-shadow: 0px 0px 24px 5px #8dda24;
+    }
+
+    &.matched{
+        border: 5px solid #7dffcd;
+        transform: scale(1.08);
+        box-shadow: 1px 1px 30px #00fa9a;
+    }
+
+
+    img{
+        max-width: 100%;
+        cursor: pointer;
+    }
+    h2{
+        margin-bottom: 10px;
+    }
+    p{
+        margin: 10px 0px;
+        text-align: justify;
+    }
+}
+
+.card.hoverBorder{
+    border: 1px solid red;
+}
