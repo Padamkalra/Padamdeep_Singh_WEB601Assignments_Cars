@@ -25,12 +25,13 @@ export class CarService {
   }
 
 
-  getcarById(id: number): Observable<any>{
-    const cars = contents.find(content => content.id === id);
+  getcarById(id: number): Observable<any>
+  {
+    const car = this.http.get<Content>(`api/bikes/${id}`);
 
-    if(cars){
+    if(car){
       this.MessageService.add(`Content Item at id: ${id}`);
-      return of(cars);
+      return car;
     }
     this.MessageService.add("Invalid Id");
     return of("Invalid Id");

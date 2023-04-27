@@ -21,6 +21,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddContentDailogComponent } from './add-content-dailog/add-content-dailog.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +34,14 @@ import { AddContentDailogComponent } from './add-content-dailog/add-content-dail
     HoverAffectDirective,
     MessageComponent,
     ModifyContentComponent,
-    AddContentDailogComponent
+    AddContentDailogComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
