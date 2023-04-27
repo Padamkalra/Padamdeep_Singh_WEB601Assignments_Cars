@@ -21,9 +21,9 @@ export class ContentListComponent {
     this.CarService.getcars().subscribe((cars: Content[]) => this.contents = cars );
   }
 
-  addNewCar(NewCar: Content){
-    this.CarService.addCar(NewCar).subscribe(newBikeFromServer => {
-      this.contents.push(newBikeFromServer);
+  addNewCar(NewCar: any){
+    this.CarService.addCar(NewCar).subscribe(newcarFromServer => {
+      this.contents.push(newcarFromServer);
       this.contents = [...this.contents];
     });
   }

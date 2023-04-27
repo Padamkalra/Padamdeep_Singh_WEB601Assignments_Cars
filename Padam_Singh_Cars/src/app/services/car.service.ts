@@ -16,9 +16,8 @@ export class CarService {
     headers: new HttpHeaders({ "Content-Type": "application/json"})
   }
   getcars(): Observable<Content[]>{
-    const cars = contents;
     this.MessageService.add("Content array loaded!");
-    return of(cars);
+    return this.http.get<Content[]>("/api/cars");
   }
   addCar(NewCar: Content): Observable<Content>{
     this.MessageService.add(`New Car added`);
