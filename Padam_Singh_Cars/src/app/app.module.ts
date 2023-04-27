@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentTypePipe } from './pipes/content-type.pipe';
-import { HoverAffectDirectiveSpecTsDirective } from './directives/hover-affect.directive.spec.ts.directive';
+import { CreateContentComponent } from './create-content/create-content.component';
+import { HoverAffectDirective } from './hover-affect.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HoverAffectDirectiveSpecTsDirective } from './directives/hover-affect.d
     ContentCardComponent,
     ContentListComponent,
     ContentTypePipe,
-    HoverAffectDirectiveSpecTsDirective
+    CreateContentComponent,
+    HoverAffectDirective
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 <main>
+    <app-create-content (addCarEvent)="addNewCar($event)"></app-create-content>
     <section class="searchForTitle">
         <div>
             <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
